@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app356.pages.Page3"
+             Title="Game Support"
+             IconImageSource="gs.png">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Support Service" FontSize="Medium"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="ZipCodeTextBox" Placeholder="Enter zipcode" />
+            <Button Text="Get Weather" Clicked="GetWeatherButton_Clicked" />
+            <Label x:Name="TemperatureLabel" />
+            <Label x:Name="ConditionLabel" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

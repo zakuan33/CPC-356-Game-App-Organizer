@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app356.pages.Page2"
+             Title="Apps Record"
+             IconImageSource="ma.png">
+
+
+    <ListView x:Name="ContactsList" ItemsSource="{Binding MyList}" SelectionMode="Single" ItemTapped="ContactsList_ItemTapped">
+
+        <ListView.Header>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Add New" Clicked="Button_Clickedn_Clicked"></Button>
+                <Button x:Name="Delete" Text="Delete" Clicked="Delete_Clicked"></Button>
+                <Button x:Name="EditButton" Text="Edit" Clicked="Edit_Clicked" />
+
+            </StackLayout>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem Text="Delete Item" Clicked="MenuItem_Delete" CommandParameter="{Binding .}">
+                        </MenuItem>
+                    </ViewCell.ContextActions>
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox  IsChecked="{Binding IsSelected}" />
+                        <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50"></Image>
+                        <Label Text="{Binding AppVersion}"></Label>
+                        <Label Text="{Binding AppsYear}"></Label>
+                        <Label Text="{Binding AppType}"></Label>
+                        <Label Text="{Binding AppName}"></Label>
+                        
+                     
+                    </StackLayout>
+                </ViewCell>
+
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>
